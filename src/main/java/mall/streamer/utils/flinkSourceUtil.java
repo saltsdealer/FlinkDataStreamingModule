@@ -14,7 +14,7 @@ import java.util.Properties;
 public class flinkSourceUtil {
     public static FlinkKafkaConsumer<String> getKafkaSource(String groupId, String topic){
         Properties props = new Properties();
-        props.setProperty("bootstrap.servers", "hadoop162:9092,hadoop163:9092,hadoop164:9092");
+        props.setProperty("bootstrap.servers", "hadoop102:9092,hadoop103:9092,hadoop104:9092");
         props.setProperty("group.id", groupId);
         props.setProperty("auto.offset.reset", "latest");
         props.setProperty("isolation.level", "read_committed");

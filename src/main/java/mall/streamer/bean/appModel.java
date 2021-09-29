@@ -37,7 +37,8 @@ public abstract class appModel {
                 .enableExternalizedCheckpoints(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
         // 4. state backend
         env.setStateBackend(new HashMapStateBackend());
-        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop162:8020/gmall2021/flink/ck/" + ck);
+        // the hdfs location to store the checkpoint
+        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/gmall2021/flink/ck/" + ck);
 
         DataStreamSource<String> stream = env.addSource(flinkSourceUtil.getKafkaSource(groupId, topic));
 
