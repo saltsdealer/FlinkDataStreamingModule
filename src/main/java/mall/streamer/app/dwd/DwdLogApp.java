@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONAware;
 import com.alibaba.fastjson.JSONObject;
-import mall.streamer.bean.appModel;
-import mall.streamer.common.constants;
+import mall.streamer.bean.AppModelV1;
+import mall.streamer.common.Constants;
 import mall.streamer.utils.*;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.state.ValueState;
@@ -34,7 +34,7 @@ import java.util.List;
  * @Date: 2021/09/28/16:54
  * @Description:
  */
-public class dwdLogApp extends appModel{
+public class DwdLogApp extends AppModelV1 {
 
     public static final String PAGE = "page";
     public static final String START = "start";
@@ -42,7 +42,7 @@ public class dwdLogApp extends appModel{
 
     public static void main(String[] args) {
         // this is where the port, parallelism,ck,and groupid is implemented
-        new dwdLogApp().init(2001,1,"dwdLogApp","dwdLogApp", constants.TOPIC_ODS_LOG);
+        new DwdLogApp().init(2001,1,"dwdLogApp","dwdLogApp", Constants.TOPIC_ODS_LOG);
     }
     @Override
     public void run(StreamExecutionEnvironment env, DataStreamSource<String> stream) {
@@ -143,7 +143,7 @@ public class dwdLogApp extends appModel{
                         if (isFirstWindowState.value() == null) {
                             //update state
                             isFirstWindowState.update(true);
-                            List<JSONObject> list = incUtil.toList(elements);
+                            List<JSONObject> list = IncUtil.toList(elements);
 
                             list.sort(Comparator.comparing(o -> o.getLong("ts")));
 
@@ -176,15 +176,15 @@ public class dwdLogApp extends appModel{
         threeStreams
                 .get(PAGE)
                 .map(JSONAware::toJSONString)
-                .addSink(flinkSinkUtil.getKafkaSink(constants.TOPIC_DWD_PAGE));
+                .addSink(FlinkSinkUtil.getKafkaSink(Constants.TOPIC_DWD_PAGE));
         threeStreams
                 .get(START)
                 .map(JSONAware::toJSONString)
-                .addSink(flinkSinkUtil.getKafkaSink(constants.TOPIC_DWD_START));
+                .addSink(FlinkSinkUtil.getKafkaSink(Constants.TOPIC_DWD_START));
         threeStreams
                 .get(DISPLAY)
                 .map(JSONAware::toJSONString)
-                .addSink(flinkSinkUtil.getKafkaSink(constants.TOPIC_DWD_DISPLAY));
+                .addSink(FlinkSinkUtil.getKafkaSink(Constants.TOPIC_DWD_DISPLAY));
 
     }
 }

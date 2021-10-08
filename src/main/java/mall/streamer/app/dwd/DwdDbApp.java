@@ -3,9 +3,9 @@ package mall.streamer.app.dwd;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import mall.streamer.bean.TableProcess;
-import mall.streamer.bean.appModel;
-import mall.streamer.common.constants;
-import mall.streamer.utils.flinkSinkUtil;
+import mall.streamer.bean.AppModelV1;
+import mall.streamer.common.Constants;
+import mall.streamer.utils.FlinkSinkUtil;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.state.BroadcastState;
 import org.apache.flink.api.common.state.MapStateDescriptor;
@@ -31,11 +31,11 @@ import org.apache.flink.util.OutputTag;
  * @Date: 2021/09/28/16:54
  * @Description:
  */
-public class dwdDbApp extends appModel {
+public class DwdDbApp extends AppModelV1 {
 
     public static void main(String[] args) {
         // this is where the port, parallelism,ck,and groupid is implemented
-        new dwdDbApp().init(2002, 1, "DwdDbApp", "DwdDbApp", constants.TOPIC_ODS_DB);
+        new DwdDbApp().init(2002, 1, "DwdDbApp", "DwdDbApp", Constants.TOPIC_ODS_DB);
     }
 
 
@@ -67,11 +67,11 @@ public class dwdDbApp extends appModel {
          */
         stream
                 .keyBy(t -> t.f1.getSink_table())
-                .addSink(flinkSinkUtil.getPhoenixSink());
+                .addSink(FlinkSinkUtil.getPhoenixSink());
     }
 
     private void writeToKafka(SingleOutputStreamOperator<Tuple2<JSONObject, TableProcess>> stream) {
-        stream.addSink(flinkSinkUtil.getKafkaSink());
+        stream.addSink(FlinkSinkUtil.getKafkaSink());
     }
 
     private Tuple2<SingleOutputStreamOperator<Tuple2<JSONObject, TableProcess>>,
@@ -88,9 +88,9 @@ public class dwdDbApp extends appModel {
                                                Context ctx, Collector<Tuple2<JSONObject, TableProcess>> out) throws Exception {
                         String sinkType = value.f1.getSink_type();
 
-                        if (constants.DWD_SINK_KAFKA.equals(sinkType)) {
+                        if (Constants.DWD_SINK_KAFKA.equals(sinkType)) {
                             out.collect(value);
-                        } else if (constants.DWD_SINK_HBASE.equals(sinkType)) {
+                        } else if (Constants.DWD_SINK_HBASE.equals(sinkType)) {
                             ctx.output(hbaseTag, value);
                         }
                     }

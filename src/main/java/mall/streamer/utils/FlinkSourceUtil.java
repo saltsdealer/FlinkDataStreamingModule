@@ -11,7 +11,7 @@ import java.util.Properties;
  * @Date: 2021/09/28/16:36
  * @Description:
  */
-public class flinkSourceUtil {
+public class FlinkSourceUtil {
     public static FlinkKafkaConsumer<String> getKafkaSource(String groupId, String topic){
         Properties props = new Properties();
         props.setProperty("bootstrap.servers", "hadoop102:9092,hadoop103:9092,hadoop104:9092");

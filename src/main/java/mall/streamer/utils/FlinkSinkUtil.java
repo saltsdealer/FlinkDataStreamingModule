@@ -1,7 +1,7 @@
 package mall.streamer.utils;
 
 import mall.streamer.bean.TableProcess;
-import mall.streamer.sink.phoenixSink;
+import mall.streamer.sink.PhoenixSink;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.functions.sink.SinkFunction;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer;
@@ -20,7 +20,7 @@ import java.util.Properties;
  * @Date: 2021/09/28/16:33
  * @Description:
  */
-public class flinkSinkUtil {
+public class FlinkSinkUtil {
     public static FlinkKafkaProducer<String> getKafkaSink(String topic) {
         Properties props = new Properties();
         props.put("bootstrap.servers", "hadoop162:9092,hadoop163:9092,hadoop164:9092");
@@ -41,7 +41,7 @@ public class flinkSinkUtil {
     }
     public static SinkFunction<Tuple2<JSONObject, TableProcess>> getPhoenixSink() {
 
-        return new phoenixSink();
+        return new PhoenixSink();
     }
 
     public static SinkFunction<Tuple2<JSONObject, TableProcess>> getKafkaSink() {

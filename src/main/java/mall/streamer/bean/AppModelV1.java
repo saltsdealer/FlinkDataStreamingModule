@@ -15,7 +15,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
  * @Date: 2021/09/28/16:39
  * @Description: a model for apps to use
  */
-public abstract class appModel {
+public abstract class AppModelV1 {
     public abstract void run(StreamExecutionEnvironment env,
                              DataStreamSource<String> stream);
 
@@ -40,7 +40,7 @@ public abstract class appModel {
         // the hdfs location to store the checkpoint
         env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/gmall2021/flink/ck/" + ck);
 
-        DataStreamSource<String> stream = env.addSource(flinkSourceUtil.getKafkaSource(groupId, topic));
+        DataStreamSource<String> stream = env.addSource(FlinkSourceUtil.getKafkaSource(groupId, topic));
 
         run(env, stream);
         try {
