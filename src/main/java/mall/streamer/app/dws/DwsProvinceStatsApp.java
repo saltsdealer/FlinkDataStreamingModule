@@ -56,8 +56,8 @@ public class DwsProvinceStatsApp extends AppModelSQL {
                 " sum(split_total_amount) order_amount, " +
                 " count(distinct(order_id)) order_count, " +
                 " unix_timestamp() *1000 ts " +
-                "from order_wide " +
-                "group by " +
+                " from order_wide " +
+                " group by " +
                 " province_id, " +
                 " province_name, " +
                 " province_area_code," +
