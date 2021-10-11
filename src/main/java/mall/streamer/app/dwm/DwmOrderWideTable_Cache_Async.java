@@ -38,9 +38,9 @@ import static mall.streamer.common.Constants.TOPIC_DWD_ORDER_INFO;
  * @Date: 2021/09/28/16:39
  * @Description: WIP
  */
-public class DwmOrderWide_Cache_Async extends AppModelV2 {
+public class DwmOrderWideTable_Cache_Async extends AppModelV2 {
     public static void main(String[] args) {
-        new DwmOrderWide_Cache_Async().init(
+        new DwmOrderWideTable_Cache_Async().init(
             3003,
             1,
             "DwmOrderWide_Cache_Async",
