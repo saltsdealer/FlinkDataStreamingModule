@@ -47,4 +47,5 @@ public class Constants {
 
     public static final String FIVE_STAR = "1205";
     public static final String FOUR_STAR = "1204";
+    public static final String TOPIC_DWS_PRODUCT_STATS = "dws_product_stats";
 }

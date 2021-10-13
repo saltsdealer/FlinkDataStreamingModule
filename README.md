@@ -1,6 +1,6 @@
 # Flink Streaming Module
 
-**ver1.0 :**
+**WIP**
 
 A model for data streaming that can be used in Big-Data scenarios the Flink version.
 
@@ -110,18 +110,10 @@ The first mission is to create the segmented data warehouse with six layers :
 
 
 ## Packages
-
+**WIP**
 ### common  
 
 to put all the constants.
-
-
-
-
-
-### publisher
-
-to connect with visualization apps, where the real demands should be meet.
 
 
 

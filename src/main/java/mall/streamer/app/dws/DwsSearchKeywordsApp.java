@@ -15,9 +15,9 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
  * @Date: 2021/10/13/11:45
  * @Description:
  */
-public class DwsSearchKeyWordsApp extends AppModelSQL {
+public class DwsSearchKeywordsApp extends AppModelSQL {
     public static void main(String[] args) {
-        new DwsSearchKeyWordsApp().init(4004, 1, "DwsSearchKeyWordStatsApp");
+        new DwsSearchKeywordsApp().init(4004, 1, "DwsSearchKeyWordStatsApp");
     }
 
     @Override
