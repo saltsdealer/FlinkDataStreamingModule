@@ -40,7 +40,7 @@ public class DwsProvinceStatsApp extends AppModelSQL {
                 "   'properties.bootstrap.servers' = 'hadoop162:9092,hadoop163:9092,hadoop164:9092', " +
                 "   'properties.group.id' = 'DwsProvinceStatsApp', " +
                 "   'topic' = '" + Constants.TOPIC_DWM_ORDER_WIDE + "', " +
-                "   'scan.startup.mode' = 'latest-offset', " +  // 如果没有消费记录,则从这个配置的地方开始消费, 如果有消费记录, 从上次的位置开始消费
+                "   'scan.startup.mode' = 'latest-offset', " +
                 "   'format' = 'json' " +
                 ")");
 

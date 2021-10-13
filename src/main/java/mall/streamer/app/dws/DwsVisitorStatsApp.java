@@ -99,7 +99,7 @@ public class DwsVisitorStatsApp extends AppModelV2 {
 
                                 vs.setStt(stt);
                                 vs.setEdt(edt);
-                                vs.setTs(System.currentTimeMillis()); // 更新统计时间
+                                vs.setTs(System.currentTimeMillis());
                                 out.collect(vs);
                             }
                         }

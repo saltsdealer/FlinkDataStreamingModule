@@ -328,7 +328,7 @@ public class DwsProductStatsApp extends AppModelV2 {
                     ps.setTs(IncUtil.toTs(refund.getString("create_time")));
 
                     ps.setComment_ct(1L);
-                    // 判断是否好评
+
                     String appraise = refund.getString("appraise");
                     if (FIVE_STAR.equals(appraise) || FOUR_STAR.equals(appraise)) {
                         ps.setGood_comment_ct(1L);
