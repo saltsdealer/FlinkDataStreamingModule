@@ -20,7 +20,7 @@ import java.sql.SQLException;
  * For educational purposes only
  *
  * @Author: saltsdealer@gmail.com
- * @Date: 2021/09/29/15:27
+ * @Date: 2022/09/29/15:27
  * @Description:
  */
 public class PhoenixSink extends RichSinkFunction<Tuple2<JSONObject, TableProcess>>{

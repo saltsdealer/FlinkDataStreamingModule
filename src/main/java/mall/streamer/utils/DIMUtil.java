@@ -11,7 +11,7 @@ import java.util.List;
  * For educational purposes only
  *
  * @Author: saltsdealer@gmail.com
- * @Date: 2021/10/08/11:47
+ * @Date: 2022/10/08/11:47
  * @Description:  After all the data is in Kafka, while dimensional data is stored in Hbase and others are segmented and remain in Kafka.
  */
 public class DIMUtil {

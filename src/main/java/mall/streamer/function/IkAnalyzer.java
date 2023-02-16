@@ -10,7 +10,7 @@ import org.apache.flink.types.Row;
  * For educational purposes only
  *
  * @Author: saltsdealer@gmail.com
- * @Date: 2021/10/13/11:43
+ * @Date: 2022/10/13/11:43
  * @Description:
  */
 @FunctionHint(output = @DataTypeHint("row<word string>"))
