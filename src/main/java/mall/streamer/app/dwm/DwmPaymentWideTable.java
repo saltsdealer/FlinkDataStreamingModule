@@ -26,7 +26,7 @@ import static mall.streamer.common.Constants.TOPIC_DWM_ORDER_WIDE;
  * For educational purposes only
  *
  * @Author: saltsdealer@gmail.com
- * @Date: 2021/10/11/15:33
+ * @Date: 2022/10/11/15:33
  * @Description:
  */
 public class DwmPaymentWideTable extends AppModelV2 {

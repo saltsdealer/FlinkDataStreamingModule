@@ -1,5 +1,7 @@
 package mall.streamer.app.dwd;
 
+
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONAware;
@@ -31,7 +33,7 @@ import java.util.List;
  * For educational purposes only
  *
  * @Author: saltsdealer@gmail.com
- * @Date: 2021/09/28/16:54
+ * @Date: 2022/09/28/16:54
  * @Description:
  */
 public class DwdLogApp extends AppModelV1 {

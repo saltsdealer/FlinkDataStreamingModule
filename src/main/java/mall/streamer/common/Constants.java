@@ -4,7 +4,7 @@ package mall.streamer.common;
  * For educational purposes only
  *
  * @Author: saltsdealer@gmail.com
- * @Date: 2021/09/28/16:31
+ * @Date: 2022/09/28/16:31
  * @Description:
  */
 public class Constants {

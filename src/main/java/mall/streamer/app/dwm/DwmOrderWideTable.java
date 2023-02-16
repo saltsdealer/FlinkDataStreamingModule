@@ -1,5 +1,7 @@
 package mall.streamer.app.dwm;
 
+
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
@@ -33,7 +35,7 @@ import static mall.streamer.common.Constants.TOPIC_DWD_ORDER_INFO;
  * For educational purposes only
  *
  * @Author: saltsdealer@gmail.com
- * @Date: 2021/09/28/16:39
+ * @Date: 2022/09/28/16:39
  * @Description:
  */
 public class DwmOrderWideTable extends AppModelV2 {
